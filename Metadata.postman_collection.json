@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "9e4ba896-915c-4d34-8ccc-7ae8dafefe6b",
+		"name": "Metadata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46132043",
+		"_collection_link": "https://jasoneasterday.postman.co/workspace/Contrast-API-examples~983bd0eb-32b5-4e2c-84c0-23897b3a0133/collection/46132043-9e4ba896-915c-4d34-8ccc-7ae8dafefe6b?action=share&source=collection_link&creator=46132043"
+	},
+	"item": [
+		{
+			"name": "Session Metadata",
+			"item": [
+				{
+					"name": "Get Session Metadata",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "{{CONTRAST__API__API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{CONTRAST__API__AUTH_HEADER}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{CONTRAST__API__URL}}/api/ng/organizations/{{CONTRAST__API__ORGANIZATION_ID}}/applications/{{APPLICATION_ID}}/agent-sessions/filter",
+							"host": [
+								"{{CONTRAST__API__URL}}"
+							],
+							"path": [
+								"api",
+								"ng",
+								"organizations",
+								"{{CONTRAST__API__ORGANIZATION_ID}}",
+								"applications",
+								"{{APPLICATION_ID}}",
+								"agent-sessions",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get sessions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{CONTRAST__API__AUTH_HEADER}}",
+								"type": "text"
+							},
+							{
+								"key": "API-Key",
+								"value": "{{CONTRAST__API__API_KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"metadata\":[{\"label\":\"Build Number\",\"values\":[\"\"]}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CONTRAST__API__URL}}/api/ng/organizations/{{CONTRAST__API__ORGANIZATION_ID}}/applications/{{APPLICATION_ID}}/agent-sessions/filter",
+							"host": [
+								"{{CONTRAST__API__URL}}"
+							],
+							"path": [
+								"api",
+								"ng",
+								"organizations",
+								"{{CONTRAST__API__ORGANIZATION_ID}}",
+								"applications",
+								"{{APPLICATION_ID}}",
+								"agent-sessions",
+								"filter"
+							]
+						},
+						"description": "Get Sessions"
+					},
+					"response": []
+				},
+				{
+					"name": "Close Session",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "{{teamserver_saas_location_subdomain}}.contrastsecurity.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{CONTRAST__API__AUTH_HEADER}}",
+								"type": "text"
+							},
+							{
+								"key": "API-Key",
+								"value": "{{CONTRAST__API__API_KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "startDate",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appName\":\"ticketbook-sessions\",\n    \"appLanguage\":\"JAVA\",\n    \"metadata\":[\n        {\"label\":\"branchName\", \"value\":\"demo\"},\n        {\"label\":\"buildNumber\", \"value\":42}\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CONTRAST__API__URL}}/api/ng/organizations/{{CONTRAST__API__ORGANIZATION_ID}}/agent-sessions/sbav",
+							"host": [
+								"{{CONTRAST__API__URL}}"
+							],
+							"path": [
+								"api",
+								"ng",
+								"organizations",
+								"{{CONTRAST__API__ORGANIZATION_ID}}",
+								"agent-sessions",
+								"sbav"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-10-01T00:00:00.001Z",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2024-10-10T00:00:00.001Z",
+									"disabled": true
+								},
+								{
+									"key": "cursor",
+									"value": "MjAyNC0wOC0wOFQxMDo1MToyNy41MzQ1MzkxMDRa",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APPLICATION_ID",
+			"value": "appId"
+		}
+	]
+}

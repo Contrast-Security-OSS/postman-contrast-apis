@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "43e1897d-58bd-48b2-b938-70aad0f1ba50",
+		"name": "Applications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46132043",
+		"_collection_link": "https://jasoneasterday.postman.co/workspace/Contrast-API-examples~983bd0eb-32b5-4e2c-84c0-23897b3a0133/collection/46132043-43e1897d-58bd-48b2-b938-70aad0f1ba50?action=share&source=collection_link&creator=46132043"
+	},
+	"item": [
+		{
+			"name": "Get Applications",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CONTRAST__API__AUTH_HEADER}}"
+					},
+					{
+						"key": "API-Key",
+						"value": "{{CONTRAST__API__API_KEY}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{CONTRAST__API__URL}}/api/ng/{{CONTRAST__API__ORGANIZATION_ID}}/applications/",
+					"host": [
+						"{{CONTRAST__API__URL}}"
+					],
+					"path": [
+						"api",
+						"ng",
+						"{{CONTRAST__API__ORGANIZATION_ID}}",
+						"applications",
+						""
+					]
+				},
+				"description": "Get Applications"
+			},
+			"response": []
+		},
+		{
+			"name": "Archive an Application",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CONTRAST__API__AUTH_HEADER}}"
+					},
+					{
+						"key": "API-Key",
+						"value": "{{CONTRAST__API__API_KEY}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{CONTRAST__API__URL}}/api/ng/{{CONTRAST__API__ORGANIZATION_ID}}/applications/{{APPLICATION_ID}}/archive",
+					"host": [
+						"{{CONTRAST__API__URL}}"
+					],
+					"path": [
+						"api",
+						"ng",
+						"{{CONTRAST__API__ORGANIZATION_ID}}",
+						"applications",
+						"{{APPLICATION_ID}}",
+						"archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Merge applications",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CONTRAST__API__AUTH_HEADER}}"
+					},
+					{
+						"key": "API-Key",
+						"value": "{{CONTRAST__API__API_KEY}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\"apps\":[\"{{APPLICATION_ID}}\", \"{{OTHER_APPLICATION_ID}}\"]}"
+				},
+				"url": {
+					"raw": "{{CONTRAST__API__URL}}/api/ng/{{CONTRAST__API__ORGANIZATION_ID}}/modules/{{APPLICATION_ID}}/merge",
+					"host": [
+						"{{CONTRAST__API__URL}}"
+					],
+					"path": [
+						"api",
+						"ng",
+						"{{CONTRAST__API__ORGANIZATION_ID}}",
+						"modules",
+						"{{APPLICATION_ID}}",
+						"merge"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APPLICATION_ID",
+			"value": "appId",
+			"type": "string"
+		}
+	]
+}

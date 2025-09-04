@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "e10fd473-44e3-4175-9c9a-43a240ffa66d",
+		"name": "SBAV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46132043",
+		"_collection_link": "https://jasoneasterday.postman.co/workspace/Contrast-API-examples~983bd0eb-32b5-4e2c-84c0-23897b3a0133/collection/46132043-e10fd473-44e3-4175-9c9a-43a240ffa66d?action=share&source=collection_link&creator=46132043"
+	},
+	"item": [
+		{
+			"name": "Get Vulns by SessionID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,fr;q=0.8"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://teamserver-staging.contsec.com"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "{{CONTRAST__API__URL}}/static/ng/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-xsrf-token",
+						"value": "c32247a7cd612e11721c6bbdb9ffadfac3e36304f4da37123dbfcbbbfb265"
+					},
+					{
+						"key": "Cookie",
+						"value": "contrast_grid_toggle=false; contrast_dashboard=true; _ga=GA1.2.2033632053.1740055152; ONBOARDING_SESSION=NmI5NDgwYzgtNTgxYy00NDllLWIxMGEtZDZkN2RmOGM0ZWE1; JSESSIONID=38B3768E4F30FD00A9BD8410136CE6E1; _gid=GA1.2.1197422225.1756818487; XSRF-TOKEN=c32247a7cd612e11721c6bbdb9ffadfac3e36304f4da37123dbfcbbbfb265; SESSION=MzI2NWRkNmMtNWJjYS00NmIzLWExMDktZDczOGUzNGMyOGY2; _gat=1; contrast_ui_key={{CONTRAST__API__AUTH_HEADER}}; _dd_s=rum=1&id=e216c006-48a6-4e70-b7e9-63e1ad673e81&created=1756907310085&expire=1756908553377; _ga_TQYR6QZ9PT=GS2.2.s1756906335$o289$g1$t1756907653$j33$l0$h0"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{CONTRAST__API__AUTH_HEADER}}",
+						"type": "text"
+					},
+					{
+						"key": "API-Key",
+						"value": "{{CONTRAST__API__API_KEY}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"agentSessionId\":\"{{AGENT_SESSION_ID}}\",\"quickFilter\":\"OPEN\",\"modules\":[\"f55f521c-8f21-4e15-b9cb-b19152f6ff7c\"],\"servers\":[],\"filterTags\":[],\"severities\":[],\"status\":[],\"substatus\":[],\"vulnTypes\":[],\"environments\":[],\"urls\":[],\"sinks\":[],\"securityStandards\":[],\"appVersionTags\":[],\"routes\":[],\"tracked\":false,\"untracked\":false,\"technologies\":[],\"applicationTags\":[],\"applicationImportances\":[],\"languages\":[],\"protectStatuses\":[],\"metadataFilters\":[{\"fieldID\":\"473\",\"values\":[\"42\"]}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CONTRAST__API__URL}}/api/ng/organizations/{{CONTRAST__API__ORGANIZATION_ID}}/orgtraces/ui?expand=application%2Csession_metadata&offset=0&limit=25&sort=-severity",
+					"host": [
+						"{{CONTRAST__API__URL}}"
+					],
+					"path": [
+						"api",
+						"ng",
+						"organizations",
+						"{{CONTRAST__API__ORGANIZATION_ID}}",
+						"orgtraces",
+						"ui"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "application%2Csession_metadata"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "25"
+						},
+						{
+							"key": "sort",
+							"value": "-severity"
+						}
+					]
+				},
+				"description": "Get Vulns by SessionID: {{AGENT_SESSION_ID}}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APPLICATION_ID",
+			"value": "individual id of application",
+			"type": "string"
+		},
+		{
+			"key": "AGENT_SESSION_ID",
+			"value": "session id of the agent",
+			"type": "string"
+		}
+	]
+}
